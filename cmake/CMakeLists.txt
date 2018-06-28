@@ -5,6 +5,11 @@ project (Tutorial)
 set (Tutorial_VERSION_MAJOR 1)
 set (Tutorial_VERSION_MINOR 0)
 
+#set install path
+message(STATUS "defautl install path: ${CMAKE_INSTALL_PREFIX}")
+set (CMAKE_INSTALL_PREFIX "${PROJECT_BINARY_DIR}/_install")
+message(STATUS "set install path: ${CMAKE_INSTALL_PREFIX}")
+
 #SET(EXECUTABLE_OUTPUT_PATH "${PROJECT_BINARY_DIR}/bin")
 #SET(LIBRARY_OUTPUT_PATH "${PROJECT_BINARY_DIR}/lib")
 
