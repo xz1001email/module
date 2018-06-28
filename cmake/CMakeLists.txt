@@ -1,9 +1,18 @@
 
 cmake_minimum_required (VERSION 2.6)
 project (Tutorial)
+
+
 # The version number.
 set (Tutorial_VERSION_MAJOR 1)
 set (Tutorial_VERSION_MINOR 0)
+
+#set debug or release
+message(STATUS "flags: $ENV{CXXFLAGS}")
+set(CMAKE_BUILD_TYPE "Debug")
+set(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g -ggdb")
+set(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")
+
 
 #set install path
 message(STATUS "defautl install path: ${CMAKE_INSTALL_PREFIX}")
