@@ -2,7 +2,6 @@
 #include <pthread.h>
 #include <time.h>
 #include <errno.h>
-
  
 typedef struct mutex_cond
 {
@@ -38,4 +37,5 @@ int main()
 	
 	return 0;
 }
+
 
