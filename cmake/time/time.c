@@ -1,9 +1,8 @@
+#include <stdint.h>
 #include <stdio.h>
 #include <time.h>
 #include <stdio.h>
-
-
-
+#include <sys/time.h>
 
 
 
@@ -12,8 +11,13 @@ int record_run_time()
     char logbuf[200];
     time_t t;
     struct tm *tmp;
+    struct timeval tv; 
+    uint32_t us;
 
-    t = time(NULL);
+    //t = time(NULL);
+    gettimeofday(&tv, NULL);
+    t = tv.tv_sec; 
+    us = tv.tv_usec; 
     tmp = localtime(&t);
     if (tmp == NULL) {
         perror("localtime");
@@ -28,7 +32,7 @@ int record_run_time()
         return -1;
     }
 
-    printf("Result string is \"%s\"\n", logbuf);
+    printf("Result string: %s, us: %d\n", logbuf, us);
     return 0;
 }
 

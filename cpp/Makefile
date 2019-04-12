@@ -66,6 +66,8 @@ ifeq ($(V),true)
 	CMD_PREFIX :=
 endif
 
+LDFLAGS := -lcurl
+
 # Combine compiler and linker flags
 release: export CXXFLAGS := $(CXXFLAGS) $(COMPILE_FLAGS) $(RCOMPILE_FLAGS)
 release: export LDFLAGS := $(LDFLAGS) $(LINK_FLAGS) $(RLINK_FLAGS)
