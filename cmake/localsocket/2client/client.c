@@ -31,8 +31,10 @@ int main(void)
     memset(snd_buf,0,1024);
     strcpy(snd_buf,"message from client");
 //send info server
-    for(i=0;i<3;i++)
+    for(i=0;i<10;i++) {
+        getchar();
         write(connect_fd,snd_buf,sizeof(snd_buf));
+    }
     close(connect_fd);
     return 0;
 }
